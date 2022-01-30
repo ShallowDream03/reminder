@@ -3,7 +3,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
-def sendmail():
+def sendmail(x):
     # 设置服务器所需信息
     # qq邮箱服务器地址
     mail_host = 'smtp.qq.com'
@@ -16,14 +16,24 @@ def sendmail():
 
     # 设置email信息
     # 邮件内容设置
-    message = MIMEMultipart()
-    message.attach(MIMEText('程序崩溃辣', 'plain', 'utf-8'))
-    # 邮件主题
-    message['Subject'] = '程序崩溃辣'
-    # 发送方信息
-    message['From'] = sender
-    # 接受方信息
-    message['To'] = receivers[0]
+    if x==1:
+        message = MIMEMultipart()
+        message.attach(MIMEText('程序崩溃辣', 'plain', 'utf-8'))
+        # 邮件主题
+        message['Subject'] = '程序崩溃辣'
+        # 发送方信息
+        message['From'] = sender
+        # 接受方信息
+        message['To'] = receivers[0]
+    else:
+        message = MIMEMultipart()
+        message.attach(MIMEText('程序正常结束', 'plain', 'utf-8'))
+        # 邮件主题
+        message['Subject'] = '程序正常结束'
+        # 发送方信息
+        message['From'] = sender
+        # 接受方信息
+        message['To'] = receivers[0]
 
     # 登录并发送邮件
     try:
