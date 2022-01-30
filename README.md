@@ -8,4 +8,7 @@ This project uses QQmail as an example, you need to apply for SMTP service befor
 
 
 
-Just use it by putting `sendmail.py` file under your code directory and add `from sendmail import sendmail` in the beginning then use it like `example.py` shows.
+Just use it by putting `sendmail.py` file under your code directory and add `from sendmail import sendmail` in the beginning then use it like `example.py` shows.  
+
+sendmail(0):send Normal end to your email
+sendmail(1):send Error end to your email
