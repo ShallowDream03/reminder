@@ -2,6 +2,7 @@ from sendmail import sendmail
 
 if __name__ == '__main__':
     try:
-        #your code
+        # your code
+        sendmail(0)
     except:
-        sendmail()
+        sendmail(1)
