@@ -12,7 +12,7 @@ def sendmail(x):
     # 邮件发送方邮箱地址（你的QQ邮箱）
     sender = 'xxxx@qq.com'
     # 邮件接受方邮箱地址，注意需要[]包裹，这意味着你可以写多个邮件地址群发，可以是任意邮箱，不限于QQ
-    receivers = ['xxxx@qq.com']
+    receivers = ['xxxx@qq.com', "xxxx@gmail.com", "xxxxx@163.com"]
 
     # 设置email信息
     # 邮件内容设置
@@ -24,7 +24,8 @@ def sendmail(x):
         # 发送方信息
         message['From'] = sender
         # 接受方信息
-        message['To'] = receivers[0]
+        for receiver in receivers:
+            message['To'] = receiver
     else:
         message = MIMEMultipart()
         message.attach(MIMEText('程序正常结束', 'plain', 'utf-8'))
@@ -33,7 +34,8 @@ def sendmail(x):
         # 发送方信息
         message['From'] = sender
         # 接受方信息
-        message['To'] = receivers[0]
+        for receiver in receivers:
+            message['To'] = receiver
 
     # 登录并发送邮件
     try:
